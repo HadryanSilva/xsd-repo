@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ReceiptDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="appt_nbr" type="xs:unsignedByte" />
+        <xs:element name="Receipt">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dc_dest_id" type="xs:unsignedShort" />
+              <xs:element name="po_nbr" type="xs:unsignedInt" />
+              <xs:element name="document_type" type="xs:string" />
+              <xs:element name="asn_nbr" type="xs:unsignedLong" />
+              <xs:element maxOccurs="unbounded" name="ReceiptDtl">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="item_id" type="xs:unsignedLong" />
+                    <xs:element name="unit_qty" type="xs:unsignedByte" />
+                    <xs:element name="receipt_xactn_type" type="xs:string" />
+                    <xs:element name="receipt_date" type="xs:dateTime" />
+                    <xs:element name="receipt_nbr" type="xs:unsignedInt" />
+                    <xs:element name="dest_id" type="xs:unsignedShort" />
+                    <xs:element name="container_id" type="xs:unsignedInt" />
+                    <xs:element name="to_disposition" type="xs:string" />
+                    <xs:element name="to_wip" type="xs:string" />
+                    <xs:element name="user_id" type="xs:unsignedInt" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
